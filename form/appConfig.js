@@ -1666,8 +1666,8 @@ export const appConfig = {
   },
   database: {
     mongoConfig: {
-      // uri: "mongodb+srv://ash:YxohToypXHw4CANq@cluster0.re3rzqw.mongodb.net/",
-      uri: "mongodb://localhost:27017",
+      uri: "mongodb+srv://ash:YxohToypXHw4CANq@cluster0.re3rzqw.mongodb.net/",
+      // uri: "mongodb://localhost:27017",
       databaseName: "ehh",
     },
   },
