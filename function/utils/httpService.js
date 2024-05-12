@@ -1,6 +1,6 @@
 export class HttpService {
     constructor(baseUrl) {
-        this.baseUrl = "http://localhost:4000/";
+        this.baseUrl = "https://dia-cxwk.onrender.com/";
     }
 
     initialize(app) {
