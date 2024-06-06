@@ -9,6 +9,7 @@ import { JsonToHtml } from '../utils/jsonToHtml.js';
 import { ActionBodyParser } from './actionBodyParser.js';
 import { HttpService } from '../utils/httpService.js';
 import { Validator } from '../utils/validator.js';
+import { LoaderPlugin } from '../utils/loading.js';
 // import { ActionJwt } from './actionJwt.js';
 
 
@@ -30,6 +31,7 @@ export class ActionApp {
         this.actionBodyParser = new ActionBodyParser();
         this.httpService = new HttpService();
         this.validator = new Validator();
+        this.loader;
         this.actionJwt;
         this.actionFs
 
@@ -98,6 +100,7 @@ export class ActionApp {
                 console.log(`Backend Server is listening on port ${port}`);
             });
         } else {
+            this.loader = new LoaderPlugin()
             this.actionClient.sendRequest({
                 meta: {
                     action: "get",

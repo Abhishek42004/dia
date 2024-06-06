@@ -5,6 +5,7 @@ export class ActionClient {
         this.app = app;
     }
     async sendRequest(req, res, urlInfo, entitySchema) {
+        
         if (typeof window === 'undefined') {
             let { action, entity, queries } = urlInfo
             let actionSchema = entitySchema.actions[action];
@@ -88,6 +89,7 @@ export class ActionClient {
 
         }
         else {
+            this.app.loader.startLoading()
             let request
             let requestSchema;
             if (req instanceof Event) {
@@ -290,8 +292,6 @@ export class ActionClient {
     }
     generateJsonFromSchema(schema, details) {
         const result = {};
-
-
         // Iterate over schema properties
         for (const key in schema) {
             console.log(key, schema);
@@ -339,7 +339,6 @@ export class ActionClient {
     }
     generateEntityFromSchema(schema, dataSources) {
         const entity = {};
-
         // Recursive function to search for property within nested objects
         const searchProperty = (path, data) => {
             const keys = path.split('.');
@@ -411,10 +410,12 @@ export class ActionClient {
         return entity;
     }
     async receiveResponse(res, result) {
+       
         console.log(res);
         if (typeof window === 'undefined') {
             res.end(JSON.stringify({ "message": "Operation Successful", result }));
         } else {
+            this.app.loader.stopLoading()
             switch (res.meta.entity) {
                 case 'page':
                     let pageArray = res.response.components[0];
