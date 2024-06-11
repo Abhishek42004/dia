@@ -59,7 +59,8 @@ export class ActionServer {
                 if (req.meta.entity === "file") {
                     // Try to use the original filenam
                     console.log("ActionFS Called");
-                    result = await this.app.actionFs[req.meta.action](req.data.fileName, file)
+                    result = await this.app.actionFs[req.meta.action](req.data.fileName, file);
+                    console.log(result);
                 } else {
                     result = await this.actionEntity.performAction(
                         req

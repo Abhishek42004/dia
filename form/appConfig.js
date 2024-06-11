@@ -1085,7 +1085,6 @@ export const appConfig = {
           input: {
             data: {
               data: { source: 'file', defaultValue: {} },
-
             }
           },
           schema: {
@@ -1094,12 +1093,9 @@ export const appConfig = {
                 "fileName": {
                   "type": "string"
                 },
-
               },
               "required": [
                 "fileName",
-
-
               ]
             }
           },

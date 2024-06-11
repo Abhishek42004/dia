@@ -56,8 +56,8 @@ export class ActionApp {
         if (typeof window === 'undefined') {
             // If in Node.js environment
             const http = await import('http');
-         // "/Users/Sam/dirname-example/src/api"
-            
+            // "/Users/Sam/dirname-example/src/api"
+
             // this.directory = __dirname
             const server = http.createServer(async (req, res) => {
                 // Set headers to allow all origins to make requests
@@ -90,7 +90,7 @@ export class ActionApp {
                     console.error("app.js: Error parsing request:", error);
                 }
                 console.log("Request parsed");
-                
+
                 // Route the request using the router
                 this.actionEvent.handleEvent(req, res);
             });

@@ -1,10 +1,10 @@
 :root {
   /* Colors */
-  --navbar-background-color: #ffffff;
+  --navbar-background-color: rgb(35,35,35);
   /* Background color of the navbar */
-  --navbar-text-color: #676e78;
+  --navbar-text-color: #fff;
   /* Text color of the navbar */
-  --navbar-hover-background-color: #ebeaea;
+  --navbar-hover-background-color: ;
   /* Background color of navbar items on hover */
   --navbar-horizontal-alignment: space-between;
   --navbar-flex-gap: 1.5rem;

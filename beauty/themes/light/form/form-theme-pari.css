@@ -11,7 +11,7 @@
     --form-input-valid-border-color: green;
   
     /* Fonts */
-    --form-font-family: "Open Sans", sans-serif;
+    --form-font-family: "monospace","Open Sans", sans-serif;
     --form-font-size-label: 0.85rem;
     --form-font-size-small: 0.8em;
     --form-font-weight-label: bold;
